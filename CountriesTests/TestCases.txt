@@ -1,0 +1,31 @@
+﻿Name: Verify all RUS neightbours contain RUS in the list borders
+
+1. Request https://restcountries.com/v2/alpha?codes=RUS
+2. Get all items from the list borders.
+3. Execute responses from step 1 with codes parameter from list in step 2.
+4. Verify that borders of each country from step 2 contain RUS.
+
+
+Name: Verify RUS country data
+
+1. Request https://restcountries.com/v2/alpha?codes=RUS
+2. Verify that RUS country response contains the following data:
+Name = "Russian Federation",
+Borders = new List<string> { "AZE", "BLR", "CHN", "EST", "FIN", "GEO", "KAZ", "PRK", "LVA", "LTU", "MNG", "NOR", "POL", "UKR" },
+Capital = "Moscow",
+Region = "Europe",
+Independent = true
+
+
+Name: Verify that request with lower and upper cases return valid data
+
+1. Request https://restcountries.com/v2/alpha?codes=RUS
+2. Request https://restcountries.com/v2/alpha?codes=rus
+3. Data from 2 requests are equal
+
+
+Name: Verify response by incorrect country name parameter
+
+1. Request https://restcountries.com/v2/alpha?codes=abc
+2. Response status code is NotFound
+ 
